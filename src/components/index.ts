@@ -1,0 +1,6 @@
+export {default as Header} from "../components/sections/Header"
+export {default as Currently} from "../components/sections/Currently"
+export {default as Services} from "../components/sections/Services"
+export {default as Technologies} from "../components/sections/Technologies"
+export {default as Projects} from "../components/sections/Projects"
+export {default as Experience} from "../components/sections/Experience"
