@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
 	return (
-		<div className='bg-[#0A0A0A] min-h-[100vh] '>
+		<div className='bg-[#0A0A0A] min-h-[100vh] p-4'>
 			<Header />
 			<Currently />
 			<Services />
