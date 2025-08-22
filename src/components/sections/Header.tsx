@@ -3,7 +3,6 @@ import { FaTelegram } from 'react-icons/fa'
 import { FiMail, FiLinkedin, FiGithub, FiSend } from 'react-icons/fi'
 import { SiUpwork } from 'react-icons/si'
 
-// Social link tipi
 interface SocialLink {
 	href: string
 	icon: any
@@ -33,7 +32,7 @@ const socialLinks: SocialLink[] = [
 	},
 	{
 		href: 'https://www.upwork.com/freelancers/~015ce662d9090a6657',
-		icon: <SiUpwork className='h-5 w-5' />, // Upwork outline icon
+		icon: <SiUpwork className='h-5 w-5' />,
 		label: 'Upwork',
 	},
 ]
@@ -67,8 +66,8 @@ const skills = [
 
 const Header = () => {
 	return (
-		<div className='text-white border-2 border-white max-w-[1440px] mx-auto'>
-			<header className='relative rounded-lg backdrop-blur-sm p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4'>
+		<div className='max-w-[1440px] mx-auto py-4'>
+			<header className='p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4'>
 				<div className='flex items-start gap-4'>
 					<Image
 						src='/images/profile-photo.jpg'
@@ -78,10 +77,10 @@ const Header = () => {
 						className='rounded-full object-cover'
 					/>
 					<div className='space-y-2'>
-						<h1 className='text-xl font-medium text-primary'>
-							Nodirbek Eshonkulov
+						<h1 className='inline-block text-xl font-medium text-[#E5E5E5] border-b-2 border-transparent hover:border-[#E5E5E5] cursor-pointer'>
+							Shokhruz Isroilov
 						</h1>
-						<p className='text-muted-foreground'>
+						<p className='text-[#A1A1A1]'>
 							Senior Full Stack Developer | 5+ years
 						</p>
 						<div className='flex flex-wrap gap-2'>
@@ -97,14 +96,14 @@ const Header = () => {
 					</div>
 				</div>
 
-				<div className='flex items-center gap-4 text-muted-foreground'>
+				<div className='flex items-center gap-4 text-[#A1A1A1]'>
 					{socialLinks.map(link => (
 						<a
 							key={link.label}
 							href={link.href}
 							target='_blank'
 							rel='noopener noreferrer'
-							className='hover:text-foreground transition-colors'
+							className='hover:text-white transform transition-transform duration-300 hover:-translate-y-1'
 							aria-label={link.label}
 						>
 							{link.icon}
