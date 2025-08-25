@@ -1,20 +1,18 @@
-import "./globals.css";
+import './globals.css'
 
 export const metadata = {
-  title: "Portfolio",
-  description: "My Portfolio with Tailwind",
-};
+	title: 'Portfolio',
+	description: 'My Portfolio with Tailwind',
+}
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className="bg-gray-100">
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang='en'>
+			<body>{children}</body>
+		</html>
+	)
 }
