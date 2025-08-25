@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
 	return (
-		<main className='bg-[#0A0A0A] min-h-[100vh] p-4'>
+		<main className='p-4'>
 			<Header />
 			<Currently />
 			<Services />
