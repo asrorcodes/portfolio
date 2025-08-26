@@ -8,7 +8,7 @@ const containerVariants = {
 	hidden: {},
 	show: {
 		transition: {
-			staggerChildren: 0.1,
+			staggerChildren: 0.15,
 		},
 	},
 }
@@ -18,7 +18,7 @@ const itemVariants = {
 	show: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.5, ease: 'easeOut' } as const,
+		transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] } as const,
 	},
 }
 
@@ -26,6 +26,7 @@ const Experience: FC = () => {
 	const [expanded, setExpanded] = useState<boolean[]>(
 		Array(experiences.length).fill(false)
 	)
+
 	const toggleExpand = (index: number) => {
 		const newExpanded = [...expanded]
 		newExpanded[index] = !newExpanded[index]
@@ -38,8 +39,8 @@ const Experience: FC = () => {
 				className='text-2xl sm:text-3xl font-semibold mb-8 text-[#FAFAFA]'
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.3 }}
-				transition={{ duration: 0.6, ease: 'easeOut' }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 0.7, ease: [0.42, 0, 0.58, 1] }}
 			>
 				# work experience 💼
 			</motion.h2>
@@ -48,7 +49,7 @@ const Experience: FC = () => {
 				className='space-y-6'
 				initial='hidden'
 				whileInView='show'
-				viewport={{ once: true, amount: 0.3 }}
+				viewport={{ once: true, amount: 0.5 }}
 				variants={containerVariants}
 			>
 				{experiences.map((exp, idx) => (
@@ -56,6 +57,9 @@ const Experience: FC = () => {
 						key={idx}
 						className='p-4 sm:p-6 rounded-lg border border-[#222323] bg-[#0A0A0A] transition-all'
 						variants={itemVariants}
+						initial='hidden'
+						whileInView='show'
+						viewport={{ once: true, amount: 0.5 }}
 					>
 						{/* Header */}
 						<div className='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-4'>

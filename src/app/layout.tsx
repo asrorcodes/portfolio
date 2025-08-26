@@ -1,30 +1,31 @@
 import './globals.css'
 
 export const metadata = {
-	title: 'Shohruz Isroilov - Frontend Developer',
+	title: 'John Doe - Web Developer',
 	description:
-		'Shohruz Isroilovning portfolio sayti. Next.js, TypeScript bilan yaratilgan zamonaviy websayt.',
+		'John Doe portfolio sayti. Next.js va TypeScript bilan yaratilgan zamonaviy veb sayt.',
 	keywords: [
 		'Frontend',
 		'Portfolio',
 		'React',
 		'Next.js',
 		'Web Developer',
-		'Shohruz Isroilov',
+		'John Doe',
 	],
-	authors: [{ name: 'Shohruz Isroilov' }],
+	authors: [{ name: 'John Doe' }],
 	openGraph: {
-		title: 'Shohruz Isroilov - Frontend Developer',
-		description: 'Mening portfolio saytim, Loyihalarim bilan tanishing.',
-		url: 'https://shokhruzisroilov.uz',
+		title: 'John Doe - Web Developer',
+		description:
+			'Mening portfolio saytim, loyihalarim va tajribam bilan tanishing.',
+		url: 'https://johndoe.dev',
 		type: 'website',
-		// images: ['https://shokhruzisroilov.uz/og-image.png'],
+		images: ['https://johndoe.dev/og-image.png'],
 	},
-	// twitter: {
-	// 	card: 'summary_large_image',
-	// 	site: '@sizning_username',
-	// 	images: ['https://shokhruzisroilov.uz/twitter-image.png'],
-	// },
+	twitter: {
+		card: 'summary_large_image',
+		site: '@johndoe',
+		images: ['https://johndoe.dev/twitter-image.png'],
+	},
 }
 
 export default function RootLayout({
@@ -33,8 +34,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang='uz'>
-			<body className='bg-[#0A0A0A] min-h-screen'>{children}</body>
+		<html lang='en'>
+			<body className='bg-[#121212] text-white min-h-screen font-sans'>
+				{children}
+			</body>
 		</html>
 	)
 }
