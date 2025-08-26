@@ -1,7 +1,26 @@
 'use client'
 
 import { FC, useState } from 'react'
+import { motion } from 'framer-motion'
 import { experiences } from '@/constants/experience'
+
+const containerVariants = {
+	hidden: {},
+	show: {
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
+}
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 30 },
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.5, ease: 'easeOut' } as const,
+	},
+}
 
 const Experience: FC = () => {
 	const [expanded, setExpanded] = useState<boolean[]>(
@@ -15,15 +34,28 @@ const Experience: FC = () => {
 
 	return (
 		<section className='max-w-[1440px] mx-auto px-4 py-10 md:py-16'>
-			<h2 className='text-2xl sm:text-3xl font-semibold mb-8 text-[#FAFAFA]'>
+			<motion.h2
+				className='text-2xl sm:text-3xl font-semibold mb-8 text-[#FAFAFA]'
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.6, ease: 'easeOut' }}
+			>
 				# work experience 💼
-			</h2>
+			</motion.h2>
 
-			<div className='space-y-6'>
+			<motion.div
+				className='space-y-6'
+				initial='hidden'
+				whileInView='show'
+				viewport={{ once: true, amount: 0.3 }}
+				variants={containerVariants}
+			>
 				{experiences.map((exp, idx) => (
-					<div
+					<motion.div
 						key={idx}
 						className='p-4 sm:p-6 rounded-lg border border-[#222323] bg-[#0A0A0A] transition-all'
+						variants={itemVariants}
 					>
 						{/* Header */}
 						<div className='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-4'>
@@ -99,9 +131,9 @@ const Experience: FC = () => {
 								</button>
 							)}
 						</div>
-					</div>
+					</motion.div>
 				))}
-			</div>
+			</motion.div>
 		</section>
 	)
 }

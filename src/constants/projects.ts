@@ -1,4 +1,7 @@
 import project1 from '@/assets/images/project1.jpg'
+import project2 from '@/assets/images/project2.jpg'
+import project3 from '@/assets/images/project3.jpg'
+import project4 from '@/assets/images/project4.jpg'
 import { StaticImageData } from 'next/image'
 
 export interface Project {
@@ -11,66 +14,73 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		title: 'Socially',
+		title: '🌐 GlobalBank',
 		description:
-			'Full-stack social media application with real-time notifications. Features include user authentication, post creation/deletion, likes, comments, follow/unfollow functionality, and profile management.',
+			'Next-generation international banking platform with lightning-fast online payments, secure cross-border transfers, virtual cards, and marketplace integrations. Designed for seamless UX across continents.',
 		image: project1,
-		link: 'https://socially-rosy-one.vercel.app/',
+		link: 'https://globalbank.com/',
 		tags: [
 			'Next.js',
 			'TypeScript',
 			'Tailwind CSS',
 			'Shadcn UI',
-			'Prisma',
-			'NeonDB',
-			'uploadthing',
-			'react-hook-form',
-			'react-hot-toast',
-			'react-icons',
+			'i18next',
+			'Redux',
+			'RTK Query',
+			'Zustand',
 		],
 	},
 	{
-		title: 'Smartbank',
+		title: '🤖 Smart FAQ Generator',
 		description:
-			'Modern banking platform with features like online payments, money transfers, marketplace integration, and virtual cards. Built with focus on UX and performance.',
-		image: '/smartbank.png',
-		link: 'https://www.smartbank.uz/',
-		tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'i18next'],
-	},
-	{
-		title: 'Smart FAQ Generator',
-		description:
-			'Smart FAQ Generator is a lightweight AI-powered web app that helps freelancers, small businesses, and startups generate professional FAQ sections in seconds. Fully editable and exportable.',
-		image: '/smart-faq.png',
-		link: 'https://faq-generator-ai.vercel.app/',
+			'AI-powered platform that generates professional FAQ sections in seconds. Ideal for startups and SMEs worldwide. Fully customizable, exportable, and multi-language ready.',
+		image: project2,
+		link: 'https://faq-generator-global.vercel.app/',
 		tags: [
-			'ReactJS',
+			'React',
 			'TypeScript',
 			'Tailwind CSS',
 			'Shadcn UI',
-			'openAI',
+			'OpenAI',
 			'react-hook-form',
 			'react-hot-toast',
-			'zod',
+			'Zod',
 		],
 	},
 	{
-		title: 'Socially',
+		title: '📊 SaaS Analytics Dashboard',
 		description:
-			'Full-stack social media application with real-time notifications. Features include user authentication, post creation/deletion, likes, comments, follow/unfollow functionality, and profile management.',
-		image: project1,
-		link: 'https://socially-rosy-one.vercel.app/',
+			'Cloud-based analytics solution for SaaS companies around the globe. Tracks KPIs, user engagement, and revenue metrics in real-time. Includes dynamic charts, multi-tenant support, and dashboards optimized for performance.',
+		image: project3,
+		link: 'https://saas-dashboard-global.com/',
 		tags: [
+			'React',
 			'Next.js',
 			'TypeScript',
+			'Chart.js',
+			'GraphQL',
 			'Tailwind CSS',
-			'Shadcn UI',
-			'Prisma',
-			'NeonDB',
-			'uploadthing',
-			'react-hook-form',
-			'react-hot-toast',
-			'react-icons',
+			'AWS',
+			'Docker',
+			'Storybook',
+		],
+	},
+	{
+		title: '🛒 E-commerce Multistore Platform',
+		description:
+			'Global multi-vendor e-commerce platform with advanced product filtering, real-time inventory management, multi-currency support, and analytics dashboards. Perfect for scaling international online stores.',
+		image: project4,
+		link: 'https://multistore-global.com/',
+		tags: [
+			'React',
+			'Next.js',
+			'TypeScript',
+			'Node.js',
+			'MongoDB',
+			'Tailwind CSS',
+			'Stripe API',
+			'REST API',
+			'i18next',
 		],
 	},
 ]

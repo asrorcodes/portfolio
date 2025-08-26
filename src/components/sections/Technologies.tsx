@@ -1,45 +1,71 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
 	frontendTechs,
 	backendTechs,
 	tools,
 	TechItem,
 } from '@/constants/technologies'
+import Image from 'next/image'
 
-export const TechSection = ({
-	title,
-	items,
-}: {
+const containerVariants = {
+	hidden: {},
+	show: { transition: { staggerChildren: 0.1 } },
+}
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 30 },
+	show: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.5, ease: 'easeOut' } as const,
+	},
+	exit: {
+		opacity: 0,
+		y: 30,
+		transition: { duration: 0.3, ease: 'easeIn' } as const,
+	},
+}
+
+interface TechSectionProps {
 	title: string
 	items: TechItem[]
-}) => {
+}
+
+const TechSection = ({ title, items }: TechSectionProps) => {
 	const [showAll, setShowAll] = useState(false)
 	const displayedItems = showAll ? items : items.slice(0, 5)
 
 	return (
-		<div className='mb-10 px-4 sm:px-6 md:px-8'>
+		<motion.div
+			className='mb-10 px-4 sm:px-6 md:px-8'
+			initial='hidden'
+			whileInView='show'
+			viewport={{ once: true, amount: 0.3 }}
+			variants={containerVariants}
+		>
 			<h3 className='text-2xl font-semibold mb-4 text-[#FAFAFA]'>{title}</h3>
-			<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6'>
-				{displayedItems.map(({ name, icon }, idx) => (
-					<div
-						key={idx}
-						className='flex flex-col items-center justify-center hover:bg-gray-800 rounded-2xl p-6 sm:p-8 transition-transform duration-300 hover:scale-105'
-					>
-						<Image
-							src={icon}
-							alt={name}
-							width={40}
-							height={40}
-							className='object-contain'
-						/>
-						<p className='mt-2 text-center text-sm sm:text-base text-[#FAFAFA]'>
-							{name}
-						</p>
-					</div>
-				))}
+
+			<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 overflow-visible'>
+				<AnimatePresence>
+					{displayedItems.map(({ name, icon }) => (
+						<motion.div
+							key={name}
+							className='flex flex-col items-center justify-center hover:bg-gray-800 rounded-2xl p-6 sm:p-8 transition-transform duration-300 hover:scale-105'
+							variants={itemVariants}
+							initial='hidden'
+							animate='show'
+							exit='exit'
+						>
+							<Image src={icon} alt={name} width={50} height={50} />
+							<p className='mt-2 text-center text-sm sm:text-base text-[#FAFAFA]'>
+								{name}
+							</p>
+						</motion.div>
+					))}
+				</AnimatePresence>
 			</div>
 
 			{items.length > 5 && (
@@ -68,15 +94,22 @@ export const TechSection = ({
 					</button>
 				</div>
 			)}
-		</div>
+		</motion.div>
 	)
 }
 
 const Technologies = () => (
 	<section className='max-w-[1440px] mx-auto py-10 md:py-16'>
-		<h2 className='text-3xl sm:text-4xl font-bold mb-8 text-center text-[#FAFAFA]'>
+		<motion.h2
+			className='text-3xl sm:text-4xl font-bold mb-8 text-center text-[#FAFAFA]'
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.3 }}
+			transition={{ duration: 0.6, ease: 'easeOut' }}
+		>
 			Technologies & Tools
-		</h2>
+		</motion.h2>
+
 		<TechSection title='Frontend' items={frontendTechs} />
 		<TechSection title='Backend' items={backendTechs} />
 		<TechSection title='Tools' items={tools} />

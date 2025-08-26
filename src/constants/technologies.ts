@@ -1,4 +1,26 @@
-import { JavaScriptIcon } from '@/assets/icons'
+import {
+	JavaScriptIcon,
+	TypeScriptIcon,
+	ReactIcon,
+	NextJsIcon,
+	TailwindIcon,
+	ReduxIcon,
+	VueIcon,
+	SvelteIcon,
+	NodeJsIcon,
+	ExpressIcon,
+	MongoDBIcon,
+	PostgreSQLIcon,
+	RedisIcon,
+	FirebaseIcon,
+	GitIcon,
+	VSCodeIcon,
+	PostmanIcon,
+	FigmaIcon,
+	DockerIcon,
+	JestIcon,
+	WebpackIcon,
+} from '@/assets/icons'
 
 export interface TechItem {
 	name: string
@@ -7,32 +29,30 @@ export interface TechItem {
 
 export const frontendTechs: TechItem[] = [
 	{ name: 'JavaScript', icon: JavaScriptIcon },
-	{ name: 'React', icon: JavaScriptIcon },
-	{ name: 'Next.js', icon: JavaScriptIcon },
-	{ name: 'TypeScript', icon: JavaScriptIcon },
-	{ name: 'Tailwind CSS', icon: JavaScriptIcon },
-	{ name: 'Redux', icon: JavaScriptIcon },
-	{ name: 'Framer Motion', icon: JavaScriptIcon },
-	{ name: 'Vue.js', icon: JavaScriptIcon },
-	{ name: 'Svelte', icon: JavaScriptIcon },
+	{ name: 'TypeScript', icon: TypeScriptIcon },
+	{ name: 'React', icon: ReactIcon },
+	{ name: 'Next.js', icon: NextJsIcon },
+	{ name: 'Tailwind CSS', icon: TailwindIcon },
+	{ name: 'Redux', icon: ReduxIcon },
+	{ name: 'Vue.js', icon: VueIcon },
+	{ name: 'Svelte', icon: SvelteIcon },
 ]
 
 export const backendTechs: TechItem[] = [
-	{ name: 'Node.js', icon: JavaScriptIcon },
-	{ name: 'Express.js', icon: JavaScriptIcon },
-	{ name: 'MongoDB', icon: JavaScriptIcon },
-	{ name: 'PostgreSQL', icon: JavaScriptIcon },
-	{ name: 'Prisma', icon: JavaScriptIcon },
-	{ name: 'Redis', icon: JavaScriptIcon },
-	{ name: 'Firebase', icon: JavaScriptIcon },
+	{ name: 'Node.js', icon: NodeJsIcon },
+	{ name: 'Express.js', icon: ExpressIcon },
+	{ name: 'MongoDB', icon: MongoDBIcon },
+	{ name: 'PostgreSQL', icon: PostgreSQLIcon },
+	{ name: 'Redis', icon: RedisIcon },
+	{ name: 'Firebase', icon: FirebaseIcon },
 ]
 
 export const tools: TechItem[] = [
-	{ name: 'Git', icon: JavaScriptIcon },
-	{ name: 'VS Code', icon: JavaScriptIcon },
-	{ name: 'Postman', icon: JavaScriptIcon },
-	{ name: 'Figma', icon: JavaScriptIcon },
-	{ name: 'Docker', icon: JavaScriptIcon },
-	{ name: 'Jest', icon: JavaScriptIcon },
-	{ name: 'Webpack', icon: JavaScriptIcon },
+	{ name: 'Git', icon: GitIcon },
+	{ name: 'VS Code', icon: VSCodeIcon },
+	{ name: 'Postman', icon: PostmanIcon },
+	{ name: 'Figma', icon: FigmaIcon },
+	{ name: 'Docker', icon: DockerIcon },
+	{ name: 'Jest', icon: JestIcon },
+	{ name: 'Webpack', icon: WebpackIcon },
 ]
